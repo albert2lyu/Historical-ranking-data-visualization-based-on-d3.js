@@ -33,7 +33,10 @@
   use_type_info: false,
   
   // 类型根据什么字段区分？如果是name，则关闭类型显示
-  divide_by: 'type',
+  divide_by: 'value',
+  
+  // 开启右上角的动态文字显示divide_by指定的列,如果关闭默认是type列
+  use_divide_by: false,
 
   // 颜色根据什么字段区分？
   divide_color_by: 'name',

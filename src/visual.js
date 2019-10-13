@@ -41,6 +41,8 @@ function draw(data) {
   var use_semilogarithmic_coordinate = config.use_semilogarithmic_coordinate;
   var big_value = config.big_value;
   var divide_by = config.divide_by;
+  // 我添加的参数
+  var use_divide_by = config.use_divide_by;
   var divide_color_by = config.divide_color_by;
   var name_list = [];
   var changeable_color = config.changeable_color;
@@ -442,10 +444,16 @@ function draw(data) {
             };
           });
       } else if (use_type_info == true) {
-        // 榜首type更新,更改这里的代码可以显示数据的其他列
-        top_type.data(currentData).text(function (d) {
+        // 榜首type更新,更改这里的代码可以显示数据的其他列,我添加use_divide_by参数
+        if(use_divide_by){
+          top_type.data(currentData).text(function (d) {
+          return d[divide_by];
+          });
+        }else{
+          top_type.data(currentData).text(function (d) {
           return d["type"];
-        });
+          });
+        }
       }
     }
 
