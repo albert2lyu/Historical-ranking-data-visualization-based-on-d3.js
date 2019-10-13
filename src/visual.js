@@ -442,7 +442,7 @@ function draw(data) {
             };
           });
       } else if (use_type_info == true) {
-        // 榜首type更新
+        // 榜首type更新,更改这里的代码可以显示数据的其他列
         top_type.data(currentData).text(function (d) {
           return d["type"];
         });
@@ -536,7 +536,7 @@ function draw(data) {
         });
     }
 
-    // bar上文字
+    // bar上文字，这里是和柱状图上的文字、颜色、长度有关
     var barInfo = barEnter
       .append("text")
       .attr("x", function (d) {

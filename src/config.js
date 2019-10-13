@@ -29,6 +29,9 @@
   // 倒序，使得最短的条位于最上方
   reverse: false,
 
+  // 关闭类型显示（会被divide_by影响）
+  use_type_info: false,
+  
   // 类型根据什么字段区分？如果是name，则关闭类型显示
   divide_by: 'type',
 
@@ -37,8 +40,9 @@
 
   // 字段的值与其对应的颜色值
   color: {
-    "Chinese": "#1177CC",
-    "Japanese": "#667788"
+    "节奏大师": "#1177CC",
+    "节奏大师2": "#667788",
+    "梦幻西游": "#ff0000"
   },
 
   // 颜色渐变：颜色绑定增长率
@@ -54,10 +58,10 @@
 
   // 附加信息内容。
   // left label
-  itemLabel: "左侧文字",
+  itemLabel: "游戏名称",
 
   // right label
-  typeLabel: "右侧文字",
+  typeLabel: "所属公司",
 
 
   // 榜首项目信息的水平位置 。
@@ -77,7 +81,7 @@
 
   // 长度小于display_barInfo的bar将不显示barInfo。
   // Hide barInfo if bar is shorter than barInfo
-  display_barInfo: 0,
+  display_barInfo: 30,
 
   // 使用计数器
   // 注意！使用计时器和使用类型目前不能兼容，即不能同时开启！
@@ -108,9 +112,9 @@
   // 图表左右上下间距。
   // 注意，left_margin不包括左侧的label，修改数值较小会导致左侧label不显示
   left_margin: 250,
-  right_margin: 150,
+  right_margin: 250,
   top_margin: 180,
-  bottom_margin: 0,
+  bottom_margin: 180,
 
   // 是否开启时间标签。
   dateLabel_switch: true,
@@ -144,18 +148,21 @@
 
   // 开启匀速动画效果
   // animation:'linear',
-  showLabel: false,
 
-  // label x轴位置
-  labelx: -10,
+  // 开启y轴标签,取值为name列
+  showLabel: true,
 
-  use_img: true,
+  // label x轴位置，设置负数，表示以柱状左侧为起点的坐标，偏左（如果使用图片此值需要设置大一点，避免文字、图片交叉覆盖）
+  labelx: -20,
 
-  // 图片路径，本地图片或者网上图片。
-  // 也可在imgs.js中配置。
+  // 不使用图片，会自动关闭左侧圆圈显示
+  use_img: false,
+
+  // 图片路径，本地图片或者网上图片，用来设置左侧圆圈里面的logo图片，不设置就是空心圆圈
+  // 也可在imgs.js中配置
   imgs: {
     "条目": "http://i1.hdslb.com/bfs/face/983034448f81f45f05956d0455a86fe0639d6a36.jpg",
-    "任意名称": "path/to/img"
+    "梦幻西游": "d:\\1.png"
   },
 
   // 全局背景颜色
